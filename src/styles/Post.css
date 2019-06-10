@@ -1,0 +1,26 @@
+#post-section{
+  width: 1000px;
+  height: 250px;
+  background-color: rgba(0,0,0,.07);
+  padding-top: 5px;
+  padding-left: 15px;
+}
+
+#post-section h2{
+  color: #1e87f0;
+}
+
+#post-section p{
+  width: 85%;
+}
+
+#comment-section .comment{
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.comment .username{
+  font-weight: bold;
+  color: #f96854;
+}

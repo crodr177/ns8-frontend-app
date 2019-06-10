@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
+import '../styles/User.css'
 
 interface State {
   users: any[]
@@ -20,26 +20,26 @@ export default class User extends Component<State>{
       this.setState({
         users: resp.data
       })
-      console.log(this.state.users)
     })
   }
 
   render(){
     return(
-      <div>
-        <Link to="/"><button>Back</button></Link>
-        <h1>Friends</h1>
-        {
-          this.state.users.map((user, i) => (
-            <ul key={"key-" + i}>
-              <li>Username: {user.username}</li>
-              <li>Name: {user.name}</li>
-              <li>Email: {user.email}</li>
-              <li>Phone Number: {user.phone}</li>
-              <li>Website: {user.website}</li>
-            </ul>
-          ))
-        }
+      <div id="user-page-container">
+        <h1 className="page-header">Friends</h1>
+        <div id="users-section">
+          {
+            this.state.users.map((user, i) => (
+              <ul className="users" key={"key-" + i}>
+                <li><span>Username:</span> {user.username}</li>
+                <li><span>Name:</span> {user.name}</li>
+                <li><span>Email:</span> {user.email}</li>
+                <li><span>Phone Number:</span> {user.phone}</li>
+                <li><span>Website:</span> {user.website}</li>
+              </ul>
+            ))
+          }
+        </div>
       </div>
     )
   }

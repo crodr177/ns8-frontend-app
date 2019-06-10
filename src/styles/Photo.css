@@ -1,0 +1,14 @@
+#photo-page-container {
+  width: 1000px;
+}
+
+#photo-page-container .image {
+  margin-left: 20%;
+  border: 10px solid #f96854;
+}
+
+#photo-page-container p{
+  text-align: center;
+  font-size: 30px;
+  margin-top: 0;
+}

@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios'
+import '../styles/Photo.css'
 
 interface State {
   image: string,
@@ -21,16 +21,15 @@ export default class Photo extends Component<State>{
       this.setState({
         image: photo.url
       })
-      console.log(this.state.image)
     })
   }
 
   render(){
     return(
-      <div>
-        <Link to="/"><button>Back</button></Link>
-        <h1>Photos</h1>
-        <img alt="placeholder" src={this.state.image}/>
+      <div id="photo-page-container">
+        <h1 className="page-header">Photos</h1>
+        <p>Feast your eyes!</p>
+        <img className="image" alt="placeholder" src={this.state.image}/>
       </div>
     )
   }

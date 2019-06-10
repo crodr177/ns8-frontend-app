@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
+import '../styles/Post.css'
 
 interface State {
   post: any
@@ -23,7 +23,6 @@ export default class Post extends Component<State>{
       this.setState({
         post: resp.data
       })
-      console.log('post data', this.state.post)
     })
   }
 
@@ -32,26 +31,28 @@ export default class Post extends Component<State>{
       this.setState({
         comments: resp.data
       })
-      console.log('comment data', this.state.comments)
     })
   }
 
   render(){
     return(
-      <div>
-        <Link to="/"><button>Back</button></Link>
-        <h1>Posts</h1>
-        <h2>{this.state.post.title}</h2>
-        <p>{this.state.post.body}</p>
+      <div id="post-page-container">
+        <h1 className="page-header">Posts</h1>
+        <div id="post-section">
+          <h2>Title: {this.state.post.title}</h2>
+          <p>Body: {this.state.post.body}</p>
+        </div>
         <h3>Comments:</h3>
-        {
-          this.state.comments.map((comment, i) => (
-            <ul key={"comment-" + i}>
-              <li>User: {comment.name}</li>
-              <li>Body: {comment.body}</li>
-            </ul>
-          ))
-        }
+        <div id="comment-section">
+          {
+            this.state.comments.map((comment, i) => (
+              <ul className="comment" key={"comment-" + i}>
+                <li className="username">User: {comment.name}</li>
+                <li className="body">Body: {comment.body}</li>
+              </ul>
+            ))
+          }
+        </div>
       </div>
     )
   }
