@@ -28,7 +28,7 @@ export default class Photo extends Component<State>{
     return(
       <div id="photo-page-container">
         <h1 className="page-header">Photos</h1>
-        <p>Feast your eyes!</p>
+//        <p>Feast your eyes!</p>
         <img className="image" alt="placeholder" src={this.state.image}/>
       </div>
     )
